@@ -4,7 +4,7 @@ from analyze import timer
 import genetic
 
 
-board = sdku.add_spaces(sdku.first_example, 20)
+board = sdku.add_spaces(sdku.first_example, 15)
 print("Board with {} blank spaces".format(sdku.board_spaces(board)))
 sdku.print_board(board)
 

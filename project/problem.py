@@ -80,9 +80,15 @@ def print_board(board: Board):
             if j % 3 == 0 and j != 0:
                 print("|", end=" ")
             if j == 8:
-                print(board[i][j])
+                if board[i][j] == 0:
+                    print("*")
+                else:
+                    print(board[i][j])
             else:
-                print(str(board[i][j]) + " ", end="")
+                if board[i][j] == 0:
+                    print("* ", end="")
+                else:
+                    print(str(board[i][j]) + " ", end="")
     print()
 
 
