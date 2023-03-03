@@ -27,7 +27,7 @@ def single_point_crossover(a: Genome, b: Genome) -> Tuple[Genome, Genome]:
     return a[0:p] + b[p:], b[0:p] + a[p:]
 
 
-def mutation(genome: Genome, num: int = 1, probability: float = 0.5) -> Genome:
+def mutation(genome: Genome, num: int = 2, probability: float = 0.6) -> Genome:
     for _ in range(num):
         index = randrange(len(genome))
         genome[index] = genome[index] if random() > probability else randint(1, 9)
@@ -90,7 +90,7 @@ def run_evolution(
             offspring_b = mutation(offspring_b)
             next_generation += [offspring_a, offspring_b]
 
-        # print_stats(population, i, fitness_func)
+        print_stats(population, i, fitness_func)
 
         population = next_generation
 
