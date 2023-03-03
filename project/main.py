@@ -4,13 +4,13 @@ from analyze import timer
 import genetic
 
 
-board = sdku.add_spaces(sdku.first_example, 8)
+board = sdku.add_spaces(sdku.first_example, 20)
 print("Board with {} blank spaces".format(sdku.board_spaces(board)))
 sdku.print_board(board)
 
 with timer():
     population, generations = genetic.run_evolution(
-        populate_func=partial(genetic.generate_population, size=10, genome_length=sdku.board_spaces(board)),
+        populate_func=partial(genetic.generate_population, size=50, genome_length=sdku.board_spaces(board)),
         fitness_func=partial(sdku.fitness, board=board.copy()),
         fitness_limit=0,
         generation_limit=500

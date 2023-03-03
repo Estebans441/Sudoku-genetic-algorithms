@@ -97,8 +97,11 @@ def board_spaces(board: Board) -> int:
 
 def add_spaces(board: Board, spaces: int) -> Board:
     new_board = [row.copy() for row in board]
-    for i in range(0,spaces):
+    i = 0
+    while i < spaces:
         x = randint(0, 8)
         y = randint(0, 8)
-        new_board[x][y] = 0
+        if new_board[x][y] != 0:
+            new_board[x][y] = 0
+            i = i + 1
     return new_board
